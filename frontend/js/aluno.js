@@ -31,20 +31,15 @@ formulario.addEventListener("submit", async function(evento) {
             formulario.reset();
             console.log("Aluno cadastrado:", resultado);
         } else {
-            mensagem.textContent =
-                "Erro ao cadastrar aluno: " + obterMensagemErro(resultado);
-
+            mensagem.textContent = "Erro ao cadastrar aluno: " + obterMensagemErro(resultado);
             console.error("Erro da API:", resultado);
         }
 
     } catch (erro) {
-        mensagem.textContent =
-            "Não foi possível conectar ao servidor.";
-
+        mensagem.textContent = "Não foi possível conectar ao servidor.";
         console.error("Erro de conexão:", erro);
     }
 });
-
 
 function obterMensagemErro(resultado) {
     if (!resultado.detail) {
@@ -60,7 +55,8 @@ function obterMensagemErro(resultado) {
                 if (campo === "nome") return "Nome inválido.";
                 if (campo === "cpf") return "CPF inválido.";
                 if (campo === "data_nascimento") return "Data de nascimento inválida.";
-                if (campo === "curso") return "Curso inválido.";
+                if (campo === "telefone") return "Telefone inválido.";
+                if (campo === "ra") return "RA inválido.";
 
                 return erro.msg;
             })
