@@ -1,10 +1,6 @@
 from datetime import date
 from pydantic import BaseModel, EmailStr
 
-
-# ==========================================
-# SCHEMAS - ALUNO
-# ==========================================
 class AlunoCreate(BaseModel):
     nome: str
     cpf: str
@@ -23,10 +19,6 @@ class AlunoResponse(BaseModel):
     telefone: str | None = None
     ra: str
 
-
-# ==========================================
-# SCHEMAS - PROFESSOR
-# ==========================================
 class ProfessorCreate(BaseModel):
     nome: str
     cpf: str
@@ -44,9 +36,6 @@ class ProfessorResponse(BaseModel):
     telefone: str | None = None
 
 
-# ==========================================
-# SCHEMAS - FUNCIONÁRIO
-# ==========================================
 class FuncionarioCreate(BaseModel):
     nome: str
     cpf: str
@@ -63,10 +52,6 @@ class FuncionarioResponse(BaseModel):
     data_nascimento: date
     telefone: str | None = None
 
-
-# ==========================================
-# SCHEMAS - TURMA
-# ==========================================
 class TurmaCreate(BaseModel):
     curso: str
     modulo: str
@@ -80,9 +65,6 @@ class TurmaResponse(BaseModel):
     ano: date
 
 
-# ==========================================
-# SCHEMAS - VÍNCULOS (TurmaAluno e TurmaProfessor)
-# ==========================================
 class TurmaAlunoCreate(BaseModel):
     codTurma: int
     codAluno: int
